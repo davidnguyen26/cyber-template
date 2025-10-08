@@ -1,0 +1,38 @@
+```yaml
+# Site settings
+title: Đức Nguyễn - Cyber Security Portfolio
+description: Building secure systems, one line at a time
+url: "https://cyber-template.github.io"
+baseurl: ""
+
+# Author
+author:
+  name: Đức Nguyễn
+  email: nmd260304@gmail.com
+  github: davidnguyen26
+  linkedin: your-linkedin
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+```
