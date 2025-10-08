@@ -1,3 +1,4 @@
+---
 layout: post
 title: "Reverse Engineering PE Files with IDA Pro"
 date: 2025-10-10
