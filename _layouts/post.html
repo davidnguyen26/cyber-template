@@ -10,214 +10,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --bg-primary: #0a0e1a;
-            --bg-elevated: #111827;
-            --accent: #60a5fa;
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --border: rgba(148, 163, 184, 0.1);
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.7;
-            font-size: 17px;
-        }
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
-            filter: blur(80px);
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        header {
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .back-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.2s;
-        }
-        
-        .back-link:hover {
-            color: var(--accent);
-        }
-        
-        article {
-            padding: 4rem 0;
-        }
-        
-        .post-meta {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            margin-bottom: 2rem;
-        }
-        
-        .post-title {
-            font-size: 3rem;
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-        
-        .post-content {
-            font-size: 1.0625rem;
-        }
-        
-        .post-content h2 {
-            font-size: 2rem;
-            margin: 3rem 0 1.5rem;
-            font-weight: 600;
-        }
-        
-        .post-content h3 {
-            font-size: 1.5rem;
-            margin: 2.5rem 0 1rem;
-            font-weight: 600;
-        }
-        
-        .post-content p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .post-content ul, .post-content ol {
-            margin: 1.5rem 0;
-            padding-left: 2rem;
-        }
-        
-        .post-content li {
-            margin-bottom: 0.75rem;
-        }
-        
-        .post-content code {
-            font-family: 'JetBrains Mono', monospace;
-            background: rgba(96, 165, 250, 0.1);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.9em;
-            color: var(--accent);
-        }
-        
-        .post-content pre {
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            overflow-x: auto;
-            margin: 2rem 0;
-        }
-        
-        .post-content pre code {
-            background: none;
-            padding: 0;
-            color: var(--text-primary);
-        }
-        
-        .post-content blockquote {
-            border-left: 3px solid var(--accent);
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-        
-        .post-content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
-        
-        .post-content a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-        
-        .post-content a:hover {
-            opacity: 0.8;
-        }
-        
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 2rem 0;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
-        
-        @media (max-width: 768px) {
-            .post-title {
-                font-size: 2rem;
-            }
-            
-            .post-content {
-                font-size: 1rem;
-            }
-            
-            .post-content h2 {
-                font-size: 1.5rem;
-            }
-            
-            .post-content h3 {
-                font-size: 1.25rem;
-            }
-        }
-    </style>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="/" class="back-link">← Back to Home</a>
-        </div>
-    </header>
-    
-    <article>
-        <div class="container">
-            <div class="post-meta">
-                {{ page.date | date: "%B %d, %Y" }} • {{ page.category }} • {{ page.reading_time }} min read
+    <div class="content-wrapper">
+        <header class="post-header">
+            <div class="container">
+                <a href="{{ site.baseurl }}/" class="back-link">← Back to Home</a>
             </div>
-            <h1 class="post-title">{{ page.title }}</h1>
-            <div class="post-content">
-                {{ content }}
+        </header>
+        
+        <article>
+            <div class="container">
+                <div class="post-meta">
+                    {{ page.date | date: "%B %d, %Y" }} • {{ page.category }} • {{ page.reading_time }} min read
+                </div>
+                <h1 class="post-title">{{ page.title }}</h1>
+                <div class="post-content">
+                    {{ content }}
+                </div>
             </div>
-        </div>
-    </article>
-    
-    <footer>
-        <div class="container">
-            © 2025 Đức Nguyễn. Built with care.
-        </div>
-    </footer>
+        </article>
+        
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-text">© 2025 Đức Nguyễn. Built with care.</div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

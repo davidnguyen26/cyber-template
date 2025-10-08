@@ -1,0 +1,324 @@
+---
+layout: default
+title: Blog
+---
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Đức Nguyễn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+        
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-elevated: #111827;
+            --accent: #60a5fa;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(148, 163, 184, 0.1);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 14, 26, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 500;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .logo-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .blog-header {
+            padding: 4rem 0 3rem;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+        
+        .blog-card {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(96, 165, 250, 0.3);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        
+        .blog-date {
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .blog-date-day {
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1;
+            color: var(--accent);
+        }
+        
+        .blog-date-month {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+        
+        .blog-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .blog-meta {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .blog-meta span {
+            margin: 0 0.5rem;
+        }
+        
+        .blog-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .tag {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.375rem 0.75rem;
+            background: rgba(96, 165, 250, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 6px;
+            color: var(--accent);
+            margin-right: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header {
+                padding: 3rem 0 2rem;
+            }
+            
+            .page-title {
+                font-size: 2.25rem;
+            }
+            
+            .blog-card {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .blog-date {
+                display: flex;
+                gap: 1rem;
+                align-items: baseline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <header>
+            <nav class="container">
+                <a href="/cyber-template/" class="logo">
+                    <span class="logo-dot"></span>
+                    Đức Nguyễn
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/cyber-template/#about">About</a></li>
+                    <li><a href="/cyber-template/#projects">Projects</a></li>
+                    <li><a href="/cyber-template/blog.html">Blog</a></li>
+                    <li><a href="/cyber-template/#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="blog-header">
+                    <h1 class="page-title">Blog</h1>
+                    <p class="page-description">Sharing knowledge about security research, reverse engineering techniques, and cybersecurity best practices.</p>
+                </div>
+
+                <div class="blog-grid">
+                    <a href="/cyber-template/blog/2025/10/10/reverse-engineering-pe-files/" class="blog-card">
+                        <div class="blog-date">
+                            <div class="blog-date-day">10</div>
+                            <div class="blog-date-month">Oct</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Reverse Engineering PE Files with IDA Pro</h3>
+                            <div class="blog-meta">
+                                Reverse Engineering <span>•</span> 8 min read
+                            </div>
+                            <p class="blog-excerpt">A comprehensive guide to analyzing portable executable files using IDA Pro, covering static analysis techniques, function graph navigation, and identifying malicious patterns.</p>
+                            <div>
+                                <span class="tag">ida-pro</span>
+                                <span class="tag">malware-analysis</span>
+                                <span class="tag">pe-files</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/cyber-template/blog/2025/10/05/automating-threat-detection/" class="blog-card">
+                        <div class="blog-date">
+                            <div class="blog-date-day">05</div>
+                            <div class="blog-date-month">Oct</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Automating Threat Detection with Nmap & Nessus</h3>
+                            <div class="blog-meta">
+                                Network Security <span>•</span> 12 min read
+                            </div>
+                            <p class="blog-excerpt">Learn how to build an automated vulnerability scanning pipeline using Nmap for reconnaissance and Nessus for in-depth vulnerability assessment.</p>
+                            <div>
+                                <span class="tag">nmap</span>
+                                <span class="tag">nessus</span>
+                                <span class="tag">automation</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/cyber-template/blog/2025/09/28/understanding-keylogger/" class="blog-card">
+                        <div class="blog-date">
+                            <div class="blog-date-day">28</div>
+                            <div class="blog-date-month">Sep</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Understanding Keylogger Mechanics</h3>
+                            <div class="blog-meta">
+                                Malware Analysis <span>•</span> 10 min read
+                            </div>
+                            <p class="blog-excerpt">Deep dive into keylogger implementation techniques, from Win32 API hooks to kernel-mode drivers, and how to detect them.</p>
+                            <div>
+                                <span class="tag">keylogger</span>
+                                <span class="tag">windows</span>
+                                <span class="tag">forensics</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,8 +1,8 @@
 # Site settings
 title: Đức Nguyễn - Cyber Security Portfolio
 description: Building secure systems, one line at a time
-url: "https://your-username.github.io"
-baseurl: ""
+url: "https://davidnguyen26.github.io"
+baseurl: "/cyber-template"
 
 # Author
 author:
