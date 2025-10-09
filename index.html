@@ -1,203 +1,100 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cyber Security student passionate about reverse engineering, malware analysis, and making the digital world safer.">
-    <meta property="og:title" content="Đức Nguyễn - Cyber Security Portfolio">
-    <meta property="og:description" content="Building secure systems, one line at a time">
-    <meta property="og:type" content="website">
-    <title>Đức Nguyễn - Cyber Security Portfolio</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-        <link rel="stylesheet" href="assets/css/main.css">
+---
+layout: default
+title: Cyber Security Portfolio
+description: Building secure systems, one line at a time
+---
 
-</head>
-<body>
-    <div class="content-wrapper">
-        <header>
-            <nav class="container">
-                <div class="logo">
-                    <span class="logo-dot"></span>
-                    Đức Nguyễn
-                </div>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="{{ site.baseurl }}/about">About</a></li>
-                    <li><a href="{{ site.baseurl }}/projects">Projects</a></li>
-                    <li><a href="{{ site.baseurl }}/blog">Blog</a></li>
-                    <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
-                </ul>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-            </nav>
-        </header>
-
-        <main>
-            <section class="hero container" id="about">
-                <div class="status-badge">
-                    <span class="status-dot"></span>
-                    Available for opportunities
-                </div>
-                <h1>Building secure systems,<br>one line at a time</h1>
-                <p>Cyber Security student passionate about reverse engineering, malware analysis, and making the digital world safer.</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                </div>
-            </section>
-
-            <section class="container" id="projects">
-                <div class="section-label">PORTFOLIO</div>
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-description">A collection of security tools and research projects I've built to tackle real-world challenges in cybersecurity.</p>
-                
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-icon">🛡️</div>
-                        <h3>Malware Analysis Automation</h3>
-                        <p>Automated malware detection and analysis pipeline using YARA rules and VirusTotal API integration for rapid threat assessment.</p>
-                        <div class="project-tags">
-                            <span class="tag">python</span>
-                            <span class="tag">yara</span>
-                            <span class="tag">api</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-icon">📊</div>
-                        <h3>System Monitor Dashboard</h3>
-                        <p>Real-time system monitoring dashboard leveraging PowerShell and Sysmon for advanced threat detection and incident response.</p>
-                        <div class="project-tags">
-                            <span class="tag">powershell</span>
-                            <span class="tag">wmi</span>
-                            <span class="tag">sysmon</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-icon">🔍</div>
-                        <h3>KeygenMe Challenge Writeups</h3>
-                        <p>Detailed writeups of reverse engineering challenges, documenting techniques in IDA Pro, x64dbg, and assembly analysis.</p>
-                        <div class="project-tags">
-                            <span class="tag">ida-pro</span>
-                            <span class="tag">x64dbg</span>
-                            <span class="tag">assembly</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-icon">🌐</div>
-                        <h3>Network Scanner Suite</h3>
-                        <p>Comprehensive network reconnaissance toolkit combining Nmap, Scapy, and custom Python scripts for vulnerability assessment.</p>
-                        <div class="project-tags">
-                            <span class="tag">python</span>
-                            <span class="tag">nmap</span>
-                            <span class="tag">scapy</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="container" id="blog">
-                <div class="section-label">WRITING</div>
-                <h2 class="section-title">Latest Articles</h2>
-                <p class="section-description">Sharing knowledge about security research, reverse engineering techniques, and cybersecurity best practices.</p>
-                
-                <div class="blog-list">
-                    <div class="blog-item">
-                        <div class="blog-date">
-                            <div class="blog-date-day">10</div>
-                            <div class="blog-date-month">Oct</div>
-                        </div>
-                        <div class="blog-content">
-                            <h3><a href="#blog">Reverse Engineering PE Files with IDA Pro</a></h3>
-                            <div class="blog-meta">
-                                Reverse Engineering <span>•</span> 8 min read
-                            </div>
-                            <p class="blog-excerpt">A comprehensive guide to analyzing portable executable files using IDA Pro, covering static analysis techniques, function graph navigation, and identifying malicious patterns in binaries.</p>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <div class="blog-date">
-                            <div class="blog-date-day">05</div>
-                            <div class="blog-date-month">Oct</div>
-                        </div>
-                        <div class="blog-content">
-                            <h3><a href="#blog">Automating Threat Detection with Nmap & Nessus</a></h3>
-                            <div class="blog-meta">
-                                Network Security <span>•</span> 12 min read
-                            </div>
-                            <p class="blog-excerpt">Learn how to build an automated vulnerability scanning pipeline using Nmap for reconnaissance and Nessus for in-depth vulnerability assessment, complete with Python integration scripts.</p>
-                        </div>
-                    </div>
-
-                    <div class="blog-item">
-                        <div class="blog-date">
-                            <div class="blog-date-day">28</div>
-                            <div class="blog-date-month">Sep</div>
-                        </div>
-                        <div class="blog-content">
-                            <h3><a href="#blog">Understanding Keylogger Mechanics</a></h3>
-                            <div class="blog-meta">
-                                Malware Analysis <span>•</span> 10 min read
-                            </div>
-                            <p class="blog-excerpt">Deep dive into keylogger implementation techniques, from Win32 API hooks to kernel-mode drivers, and how to detect them using behavioral analysis and memory forensics.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="container" id="contact">
-                <div class="section-label">GET IN TOUCH</div>
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-description">Interested in collaborating or have questions about my work? Feel free to reach out through any of the channels below.</p>
-            </section>
-        </main>
-
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-text">© 2025 Đức Nguyễn. Built with care.</div>
-                    <div class="social-links">
-                        <a href="mailto:contact@example.com" class="social-link" title="Email">✉</a>
-                        <a href="https://github.com" class="social-link" title="GitHub">⚡</a>
-                        <a href="https://linkedin.com" class="social-link" title="LinkedIn">👔</a>
-                        <a href="https://twitter.com" class="social-link" title="Twitter">🐦</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+<section class="hero container" id="about">
+    <div class="status-badge">
+        <span class="status-dot"></span>
+        Available for opportunities
     </div>
+    <h1>Building secure systems,<br>one line at a time</h1>
+    <p>Cyber Security student passionate about reverse engineering, malware analysis, and making the digital world safer.</p>
+    <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+    </div>
+</section>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-        });
-        
-        // Close mobile menu when clicking a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.textContent = '☰';
-            });
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.textContent = '☰';
-            }
-        });
-    </script>
-</body>
-</html>
+<section class="container" id="projects">
+    <div class="section-label">PORTFOLIO</div>
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-description">A collection of security tools and research projects I've built to tackle real-world challenges in cybersecurity.</p>
+    
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-icon">🛡️</div>
+            <h3>Malware Analysis Automation</h3>
+            <p>Automated malware detection and analysis pipeline using YARA rules and VirusTotal API integration for rapid threat assessment.</p>
+            <div class="project-tags">
+                <span class="tag">python</span>
+                <span class="tag">yara</span>
+                <span class="tag">api</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-icon">📊</div>
+            <h3>System Monitor Dashboard</h3>
+            <p>Real-time system monitoring dashboard leveraging PowerShell and Sysmon for advanced threat detection and incident response.</p>
+            <div class="project-tags">
+                <span class="tag">powershell</span>
+                <span class="tag">wmi</span>
+                <span class="tag">sysmon</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-icon">🔐</div>
+            <h3>KeygenMe Challenge Writeups</h3>
+            <p>Detailed writeups of reverse engineering challenges, documenting techniques in IDA Pro, x64dbg, and assembly analysis.</p>
+            <div class="project-tags">
+                <span class="tag">ida-pro</span>
+                <span class="tag">x64dbg</span>
+                <span class="tag">assembly</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-icon">🌐</div>
+            <h3>Network Scanner Suite</h3>
+            <p>Comprehensive network reconnaissance toolkit combining Nmap, Scapy, and custom Python scripts for vulnerability assessment.</p>
+            <div class="project-tags">
+                <span class="tag">python</span>
+                <span class="tag">nmap</span>
+                <span class="tag">scapy</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="blog">
+    <div class="section-label">WRITING</div>
+    <h2 class="section-title">Latest Articles</h2>
+    <p class="section-description">Sharing knowledge about security research, reverse engineering techniques, and cybersecurity best practices.</p>
+    
+    <div class="blog-list">
+        {% for post in site.posts limit:3 %}
+        <div class="blog-item">
+            <div class="blog-date">
+                <div class="blog-date-day">{{ post.date | date: "%d" }}</div>
+                <div class="blog-date-month">{{ post.date | date: "%b" }}</div>
+            </div>
+            <div class="blog-content">
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                <div class="blog-meta">
+                    {{ post.category }} <span>•</span> {{ post.reading_time }} min read
+                </div>
+                <p class="blog-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="container" id="contact">
+    <div class="section-label">GET IN TOUCH</div>
+    <h2 class="section-title">Let's Connect</h2>
+    <p class="section-description">Interested in collaborating or have questions about my work? Feel free to reach out through any of the channels below.</p>
+</section>

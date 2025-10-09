@@ -8,12 +8,19 @@ baseurl: "/cyber-template"
 author:
   name: Đức Nguyễn
   email: contact@example.com
-  github: your-username
+  github: davidnguyen26
   linkedin: your-linkedin
 
 # Build settings
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
+
+# Kramdown settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
 
 # Exclude files
 exclude:
@@ -21,6 +28,13 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+  - README.md
+  - .git
+  - .gitignore
+
+# Include files
+include:
+  - _pages
 
 # Collections
 collections:
@@ -28,8 +42,25 @@ collections:
     output: true
     permalink: /blog/:year/:month/:day/:title/
 
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+# Feed settings
+feed:
+  path: feed.xml
